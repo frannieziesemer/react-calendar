@@ -1,4 +1,4 @@
-export const Header = ({ monthNumber, year }) => {
+export const Header = ({ month, showNextMonth, showPrevMonth, year }) => {
   const months = [
     "January",
     "February",
@@ -17,8 +17,11 @@ export const Header = ({ monthNumber, year }) => {
   return (
     <div className="Header">
       <h1 className="text-3xl text-emerald-800">
-        {months[monthNumber]} {year}
+        {months[month]} {year}
       </h1>
+      <button onClick={showPrevMonth}>Prev Month</button>
+      
+      <button onClick={showNextMonth}>Next Month</button>
     </div>
   );
 };
